@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Coin Transaction</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div id="show_event" style="position:absolute;top:37px;right:-410px;width: 400px; height: 92px; border-radius: 10px 10px 10px 10px;position: fixed;color: #04ce04;padding-right: 10px;background: #ffffff;text-align: center;overflow: hidden;border: 1px solid;margin:0 auto;">
+      <span  id="showmessage_text" style="float: left;padding: 10px;"></span>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-8 col-sm-push-2">
+          <h1 class="text-center">Coin Transaction</h1>
+          <h5 class="text-center" id="minter">Minter : </h5>
+          <h5 class="text-center" id="current_account">Current user account : </h5>
+          <hr/>
+          <br/>
+        </div>
+      </div>
+
+      <div id="proposalsRow" class="row">
+        <!-- CANDIDATES LOAD HERE -->
+      </div>
+    </div>
+
+  <center>
+  <div class="">
+  <div class="column" id="balance_coin" style="float: left;width: 30%;padding: 10px;height: 300px; border-right: 1px solid #00000040">
+    <h2>Check Balance</h2>
+    <div style="margin-top: 40px;">
+          <span> Account : </span>
+          <span id="curr_account"></span>
+    </div>
+    <div>
+      <span>Balance : </span>
+      <input disabled type="text" id="display_balance" style="margin-top: 40px;">
+    </div>
+    <button id="balance" style="margin-top: 40px;" class="btn btn-info" type="button" id="create_money">Balance</button>
+  </div>
+
+  <div class="column" id="create_coin"  style="float: left;width: 40%;padding: 10px;height: 300px; border-right: 1px solid #00000040">
+    <h2>Mint Coin</h2>
+    <div style="margin-top: 40px;">
+          <span> To : </span>
+          <select id="enter_create_address" value="">
+            <option value="">Please select an account</option>
+          </select>
+    </div>
+    <div>
+      <span>Amount : </span>
+      <input type="number" id="create_amount" style="margin-top: 40px;" >
+    </div>
+    <button style="margin-top: 40px;" class="btn btn-info" type="button" id="create_money">Mint</button>
+  </div>
+
+  <div class="column" id="send_coin" style="float: left;width: 30%;padding: 10px;height: 300px;">
+    <h2>Send Coin</h2>
+    <div style="margin-top: 40px;">
+          <span> To : </span>
+          <select id="enter_send_address" value="">
+            <option value="">Please select an account</option>
+          </select>
+    </div>
+    <div>
+      <span>Amount : </span>
+      <input type="number" id="send_amount" style="margin-top: 40px;" >
+    </div>
+    <button style="margin-top: 40px;" class="btn btn-info" type="button" id="send_money">Send</button>
+  </div>
+  </div>
+</div>
+</center>
+
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+
+    var docElm = document.documentElement;
+    if (docElm.requestFullscreen) {
+        docElm.requestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+    }
+    else if (docElm.mozRequestFullScreen) {
+    docElm.mozRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+    }
+    else if (docElm.webkitRequestFullScreen) {
+        docElm.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+    }
+    </script>
+  </body>
+</html>
